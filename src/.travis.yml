@@ -3,8 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t jakhongir20/docker-react -f Dockerfile.dev .
+  - docker build -t docker-react -f Dockerfile.dev .
 
 script:
-  - docker run jakhongir20/docker-react  npm run test -- --coverage # mackook or jakhongir/docker-react
+  - docker run docker-react  npm run test -- --coverage # mackook or jakhongir/docker-react
 
+branches:
+  only:
+    - main
