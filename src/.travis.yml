@@ -6,8 +6,8 @@ before_install:
   - docker build -t docker-react -f Dockerfile.dev .
 
 script:
-  - docker run docker-react  npm run test -- --coverage # mackook or jakhongir/docker-react
+  - docker run -e CI=true docker-react  npm run test -- --coverage # mackook or jakhongir/docker-react
 
-branches:
-  only:
-    - main
+# branches:
+#   only:
+#     - main
